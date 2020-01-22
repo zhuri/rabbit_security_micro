@@ -1,0 +1,9 @@
+FROM golang:1.13.5
+ 
+RUN mkdir -p /app
+ 
+WORKDIR /app
+ 
+ADD . /app
+ 
+#CMD ["./main"]

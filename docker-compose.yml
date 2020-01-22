@@ -1,0 +1,25 @@
+version: '3'
+services:
+  publisher:
+    build: 
+        context: ./publisher
+        dockerfile: Dockerfile
+    container_name: publisher_c
+    stdin_open: true
+    tty: true
+  subscriber:
+    build: 
+        context: ./subscriber
+        dockerfile: Dockerfile
+    container_name: subscriber_c
+    stdin_open: true
+    tty: true
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 15671:15671
+      - 15672:15672
+      - 5671:5671
+      - 5672:5672
+
